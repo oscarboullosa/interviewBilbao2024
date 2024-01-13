@@ -38,7 +38,10 @@ public class UserService {
         return null;
     }
 
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
+    public void deleteUser(Long userId) {
+        if (!userRepository.existsById(userId)) {
+            throw new IllegalArgumentException("User not found with ID: " + userId);
+        }
+        userRepository.deleteById(userId);
     }
 }

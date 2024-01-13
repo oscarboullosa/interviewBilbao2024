@@ -13,6 +13,16 @@ public class User {
     private String username;
     private String email;
 
+    // Constructor sin argumentos
+    public User() {
+    }
+
+    // Constructor con argumentos
+    public User(Long id, String username) {
+        this.id = id;
+        this.username = username;
+    }
+
     // Getters and setters
 
     public Long getId() {
